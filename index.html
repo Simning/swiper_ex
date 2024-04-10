@@ -4,33 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SwiperEX</title>
     <link rel="shortcut ico3" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>
+
 <body>
+    <h1 class="logo">DCODELAB</h1>
+
     <main>
         <section class="swiper-wrapper">
-            <article class="swiper-slide">1</article>
-            <article class="swiper-slide">2</article>
-            <article class="swiper-slide">3</article>
-            <article class="swiper-slide">4</article>
-            <article class="swiper-slide">5</article>
+            <article class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="/img/pic1.png" alt="pic1">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quia minus iusto.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="/img/pic2.png" alt="pic2">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quia minus iusto.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="/img/pic3.png" alt="pic3">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quia minus iusto.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="/img/pic4.png" alt="pic4">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quia minus iusto.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="/img/pic5.png" alt="pic5">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quia minus iusto.</p>
+                    </div>
+                </div>
+            </article>
         </section>
-    </main>
+        
+        <footer>
+            2022 DCODELAB &copy; ALL RIGHTS RESERVED.
+        </footer>
 
+        <nav class="swiper-pagination"></nav>
+
+        <nav class="swiper-button-prev navi"></nav>
+        <nav class="swiper-button-next navi"></nav>
+    </main>
 
     <script>
         const swiper = new Swiper("main", {
-            speed: 500, //스와이프시 패널이 넘어가는 속도 1000은 1초
-            loop: true, //스와이프 순환
-            direction: "horizontal", //horizontal 가로, vertical 세로 스와이프
-            grabCursor: true, // 마우스 커서
-            slidesPerView: "auto", //숫자 (해당 갯수로 패널 생성), "auto"는 100% 및 특정 크기를 지정
-            spaceBetween: 30, //패널 사이 간격(px)
-            centeredSlides: true //가운데 정렬
+            speed: 500, // 스와이프시 패널이 넘어가는 속도
+            loop: true, // 스와이프를 순환
+            loopedSlides: 2, // loop 오류 해결
+            direction: "horizontal", // 스와이프 방향 축
+            grabCursor: true, // 마우스로 잡아끌기
+            slidesPerView: "auto", // 해당 개수 단위로 슬라이드 패널
+            spaceBetween: 20, // 패널 사이 간격
+            centeredSlides: true, // 활성화된 패널 가운데 배치
+            pagination: {
+                el: ".swiper-pagination", // 페이지네이션 버튼 추가
+                // clickable: true, // 클릭 가능 여부
+                type: "fraction",
+            },
+            navigation: {
+                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-button-next"
+            },
+            effect: "coverflow",
+            coverflowEffect: {
+                rotate: 50, // y축 회전 각도
+                stretch: -100, // 당겨짐 정도
+                depth: 400, // 입체적인 왜곡효과 정도
+                slideShadows: false, // 패널의 그림자 설정
+            }
         });
     </script>
 </body>
